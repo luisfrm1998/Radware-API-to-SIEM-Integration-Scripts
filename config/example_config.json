@@ -1,0 +1,13 @@
+{
+    "api_url": "https://api.radwarecloud.app",
+    "headers": {
+        "context": "your_context_here",
+        "x-api-key": "your_api_key_here"
+    },
+    "syslog_server": "192.168.0.105",
+    "syslog_port": 514,
+    "default_start_timestamp": 1717200000000,
+    "last_timestamp_security": "config/example_last_timestamp_security.txt",
+    "last_timestamp_operational": "config/example_last_timestamp_operational.txt",
+    "query_interval": 60000
+}

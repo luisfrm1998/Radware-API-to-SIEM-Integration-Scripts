@@ -25,3 +25,20 @@ This repository contains Python scripts for integrating operational and security
    ```bash
    git clone https://github.com/luisfrm1998/Radware-API-to-SIEM-Integration-Scripts
    cd radware-siem-integration
+   
+## Structure
+
+```plaintext
+radware-api-to-siem/
+├── scripts/
+│   ├── retrive_security_events.py         # Script for security events
+│   ├── retrive_operational_events.py      # Script for operational events
+├── config/
+│   ├── example_config.json                # Centralized configuration file
+│   ├── example_last_timestamp_security.txt  # Timestamp for security events
+│   ├── example_last_timestamp_operational.txt  # Timestamp for operational events
+├── logs/
+│   ├── .gitignore                         # Prevent log files from being uploaded
+├── requirements.txt                       # Python dependencies
+├── README.md                              # Documentation
+├── LICENSE                                # License file
