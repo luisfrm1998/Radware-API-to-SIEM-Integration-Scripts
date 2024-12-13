@@ -1,0 +1,7 @@
+*.log
+__pycache__/
+*.pyc
+*.pyo
+.DS_Store
+config/example_last_timestamp_security.txt
+config/example_last_timestamp_operational.txt
