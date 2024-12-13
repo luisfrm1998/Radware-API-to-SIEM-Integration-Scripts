@@ -4,7 +4,7 @@ This repository contains Python scripts for integrating operational and security
 
 ## Features
 
-- Query operational events from the Radware API.
+- Query security and operational events from the Radware API.
 - Filters by time range, severity, and specific account.
 - Formats events into CEF.
 - Automatically sends events to a SIEM via Syslog.
