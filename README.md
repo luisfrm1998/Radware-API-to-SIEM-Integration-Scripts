@@ -119,14 +119,17 @@ To run the scripts every minute, set up cron jobs:
 ```plaintext
 radware-api-to-siem/
 ├── scripts/
-│   ├── retrive_security_events.py         # Script for security events
-│   ├── retrive_operational_events.py      # Script for operational events
+│   ├── retrive_security_events.py         # Script to retrieve and process security events
+│   ├── retrive_operational_events.py      # Script to retrieve and process operational events
 ├── config/
 │   ├── example_config.json                # Centralized configuration file
 │   ├── example_last_timestamp_security.txt  # Timestamp for security events
 │   ├── example_last_timestamp_operational.txt  # Timestamp for operational events
 ├── logs/
-│   ├── .gitignore                         # Prevent log files from being uploaded
+│   ├── security.log                       # Log file for security events
+│   ├── operational.log                    # Log file for operational events
+│   ├── .gitignore                         # Prevent logs from being uploaded to the repository
 ├── requirements.txt                       # Python dependencies
-├── README.md                              # Documentation
+├── README.md                              # Project documentation
 ├── LICENSE                                # License file
+
