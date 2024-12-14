@@ -39,7 +39,7 @@ cd Radware-API-to-SIEM-Integration-Scripts
 Install the required Python libraries listed in `requirements.txt`:
 
 ```bash
-pip install -r requirements.txt
+sudo apt install python3-requests
 ```
 
 ---
