@@ -28,8 +28,8 @@ This repository contains Python scripts for integrating operational and security
 Clone this repository to your local environment:
 
 ```bash
-git clone https://github.com/luisfrm1998/Radware-API-to-SIEM-Integration-Scripts/tree/main
-cd radware-api-to-siem
+git clone https://github.com/luisfrm1998/Radware-API-to-SIEM-Integration-Scripts
+cd Radware-API-to-SIEM-Integration-Scripts
 ```
 
 ---
