@@ -21,6 +21,7 @@ try:
     syslog_port = config["syslog_port"]
     last_timestamp_path = config["last_timestamp_operational"]
     default_start_timestamp = config["default_start_timestamp"]
+    account_id = config["account_id"]  # Get the value of 'accountId' from configuration
     print("Configuration variables set successfully.")
 except KeyError as e:
     print(f"Missing configuration key: {e}")
@@ -78,12 +79,13 @@ def fetch_events():
 
         body = {
             "criteria": [
-                {"key": "accountId", "value": "your_account_id_here"},
+                {"key": "accountId", "value": account_id},  # Use 'accountId' from the configuration
                 {"key": "context._timestamp", "value": [start_timestamp, None]},
                 {"key": "severity", "value": ["INFO", "LOW", "MEDIUM", "HIGH", "CRITICAL"]}
             ]
         }
 
+        print(f"Request body: {json.dumps(body, indent=4)}")  # Debugging: Print the request body
         response = requests.post(api_url, headers=headers, json=body)
         print(f"API response status: {response.status_code}")
         if response.status_code == 200:
