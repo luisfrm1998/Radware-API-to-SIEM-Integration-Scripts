@@ -21,7 +21,7 @@ try:
     syslog_port = config["syslog_port"]
     last_timestamp_path = config["last_timestamp_security"]
     default_start_timestamp = config["default_start_timestamp"]
-    account_id = config["account_id"]  # Get the value of 'accountId' from configuration
+    account_id = headers["context"]  # Extract accountId from headers["context"]
     print("Configuration variables set successfully.")
 except KeyError as e:
     print(f"Missing configuration key: {e}")
