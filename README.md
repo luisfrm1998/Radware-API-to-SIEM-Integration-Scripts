@@ -82,10 +82,10 @@ To run the scripts every minute, set up cron jobs:
 
 2. Add the following lines to schedule the scripts:
 
-   ```plaintext
-* * * * * cd /path/to/Radware-API-to-SIEM-Integration-Scripts && /usr/bin/python3 scripts/retrive_security_events.py >> logs/security.log 2>&1
-* * * * * cd /path/to/Radware-API-to-SIEM-Integration-Scripts && /usr/bin/python3 scripts/retrive_operational_events.py >> logs/operational.log 2>&1
-   ```
+	```plaintext
+	* * * * * cd /path/to/Radware-API-to-SIEM-Integration-Scripts && /usr/bin/python3 scripts/retrive_security_events.py >> logs/security.log 2>&1
+	* * * * * cd /path/to/Radware-API-to-SIEM-Integration-Scripts && /usr/bin/python3 scripts/retrive_operational_events.py >> logs/operational.log 2>&1
+	```
 
    Replace `/path/to/Radware-API-to-SIEM-Integration-Scripts` with the absolute path to your project directory.
 
