@@ -45,11 +45,17 @@ def get_last_timestamp():
     """
     try:
         with open(last_timestamp_path, 'r') as f:
-            timestamp = int(f.read().strip())
+            content = f.read().strip()
+            if not content:
+                raise ValueError("Timestamp file is empty. Using default start timestamp.")
+            timestamp = int(content)
             print(f"Last timestamp retrieved: {timestamp}")
             return timestamp
     except FileNotFoundError:
         print(f"Timestamp file not found. Using default start timestamp: {default_start_timestamp}")
+        return default_start_timestamp
+    except ValueError as e:
+        print(f"{e}")
         return default_start_timestamp
     except Exception as e:
         print(f"Error reading last timestamp: {e}")
