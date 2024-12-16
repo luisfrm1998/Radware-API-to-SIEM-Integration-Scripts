@@ -126,4 +126,32 @@ def send_to_siem(cef_log):
     Send a CEF-formatted log to the Syslog server.
     """
     try:
-        print(f"Sending event to SIEM: {cef_log
+        print(f"Sending event to SIEM: {cef_log}")
+        logger.info(cef_log)
+    except Exception as e:
+        print(f"Error sending event to SIEM: {e}")
+        logging.error(f"Error sending event to SIEM: {e}")
+
+
+def main():
+    """
+    Fetch and process security events, then send them to the SIEM.
+    """
+    try:
+        print("Starting main process.")
+        events = fetch_events()
+        if events:
+            for event in events:
+                cef_log = format_to_cef(event)
+                if cef_log:
+                    send_to_siem(cef_log)
+        else:
+            print("No events to process.")
+    except Exception as e:
+        print(f"Error in main process: {e}")
+        logging.error(f"Error in main process: {e}")
+
+
+if __name__ == "__main__":
+    main()
+
