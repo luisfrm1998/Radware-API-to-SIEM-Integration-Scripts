@@ -50,13 +50,7 @@ sudo apt install python3-requests
    - **API credentials:** Replace `"context"` and `"x-api-key"` in the `headers` section with your Radware API credentials.
    - **Syslog details:** Replace `"syslog_server"` and `"syslog_port"` with the IP address and port of your Syslog server.
    - **Default start timestamp:** Update `"default_start_timestamp"` if you want to specify a custom starting point for queries.
-
-2. Ensure that the timestamp files exist and are initialized:
-   ```bash
-   echo "0" > config/example_last_timestamp_security.txt
-   echo "0" > config/example_last_timestamp_operational.txt
-   ```
-
+exit
 ---
 
 ### Step 4: Test the Scripts
@@ -89,11 +83,11 @@ To run the scripts every minute, set up cron jobs:
 2. Add the following lines to schedule the scripts:
 
    ```plaintext
-   * * * * * /usr/bin/python3 /path/to/radware-api-to-siem/scripts/retrive_security_events.py >> /path/to/radware-api-to-siem/logs/security.log 2>&1
-   * * * * * /usr/bin/python3 /path/to/radware-api-to-siem/scripts/retrive_operational_events.py >> /path/to/radware-api-to-siem/logs/operational.log 2>&1
+* * * * * cd /path/to/Radware-API-to-SIEM-Integration-Scripts && /usr/bin/python3 scripts/retrive_security_events.py >> logs/security.log 2>&1
+* * * * * cd /path/to/Radware-API-to-SIEM-Integration-Scripts && /usr/bin/python3 scripts/retrive_operational_events.py >> logs/operational.log 2>&1
    ```
 
-   Replace `/path/to/radware-api-to-siem/` with the absolute path to your project directory.
+   Replace `/path/to/Radware-API-to-SIEM-Integration-Scripts` with the absolute path to your project directory.
 
 3. Save and exit the editor.
 
@@ -108,8 +102,8 @@ To run the scripts every minute, set up cron jobs:
 
 2. Monitor the logs to ensure the scripts are running as expected:
    ```bash
-   tail -f /path/to/radware-api-to-siem/logs/security.log
-   tail -f /path/to/radware-api-to-siem/logs/operational.log
+   tail -f /path/to/Radware-API-to-SIEM-Integration-Scripts/logs/security.log
+   tail -f /path/to/Radware-API-to-SIEM-Integration-Scripts/logs/operational.log
    ```
  
 ---
